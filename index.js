@@ -4,6 +4,7 @@ app.set("view engine","ejs");
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 require("dotenv/config");
+
 const session = require("express-session");
 
 app.use(session({
