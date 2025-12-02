@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include("../partials/cabecalho.ejs")%>
+    <div class="container">
+    <% if(status == "1"){ %>
+            <div class="alert alert-success alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            Cadastrado com <b>successo.</b>
+        </div>
+    <%}%>
+
+    <% if(status == "2"){ %>
+            <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            excluido com <b>successo.</b>
+        </div>
+    <%}%>
+
+<a href="/usuario/cadastrar" class="btn btn-success">Cadastrar</a>
+    <h2>RELATÓRIO DE USUARIOS</h2>
+    <table class="table table-striped">
+
+        <thead>
+            <th>email</th>
+            <th>Nome</th>
+            <th>Detalhar</th>
+            <th>excluir</th>
+            <th>atualizar</th>
+        </thead>
+
+
+
+    <% usuario.forEach(usuario=>{%>
+        <tr>
+            <td><%=usuario.email %></td>
+            <td><%=usuario.nome %></td>
+            <td><a href="/usuario/<%= usuario.email %>" class="btn btn-info">Detalhar</a></td>
+            <td><a href="/usuario/atualizar/<%= usuario.email %>" class="btn btn-warning">Atualizar</a></td>
+            <td><a href="/usuario/excluir/<%= usuario.email %>" class="btn btn-danger">excluir</a></td>
+           
+
+        </tr>
+
+
+
+
+
+
+    <% }) %>
+    </table>
+    <a href="/" class="btn btn-secondary">voltar</a>
+</div>
+
+<%-include("../partials/rodape.ejs")%>
+
+</body>
+</html>

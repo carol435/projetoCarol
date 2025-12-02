@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include("../partials/cabecalho.ejs")%>
+
+    <div class="container">
+    <h1>-----cadatro de usuarios-----</h1>
+    <div>
+        <b>email</b>:<%=usuario.email%>
+    </div>
+    <div>
+        <b>nome</b>:<%=usuario.nome%>
+    </div>
+    <div>
+
+        <a href="/usuario" class="btn btn-secondary">voltar</a>
+    </div> 
+</div>
+
+    <%-include("../partials/rodape.ejs")%>
+</body>
+</html>
