@@ -1,5 +1,5 @@
 const bcryptjs = require("bcryptjs");
-const Usuario = require ("../models/usuario");
+const Usuario = require ("../models/Usuario");
 class usuarioController{
 
 
