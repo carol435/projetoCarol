@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+</head>
+<body>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <div class="container">
+
+    <% if (status=="1") { %>
+
+        <div class="alert alert-success alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        Cadastrado com <b>sucesso.</b>
+        </div>
+           
+<%}%>
+    <% if(status == "2"){ %>
+
+        <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        Removidoo com <b>successo.</b>
+        </div>
+    <%}%>
+ 
+    <h2>Relatório </h2>
+
+   
+
+    <table class="table table-stiped">
+        <thead>
+            <th>Genêro</th>
+            <th>Nome </th>
+            <th>Cpf</th>
+            <th>Detalhar</th>
+            <th>Atualizar</th>
+            <th>Excluir</th>
+        </thead>
+
+        <% cantor.forEach(cantor => {%>
+
+            <tr>
+                <td><%= cantor.genero %></td>
+                <td><%= cantor.nome %></td>
+                <td><%= cantor.cpf %></td>
+                <td><a href="/cantor/<%=cantor.cpf%>" class="btn btn-info">Detalhar</a></td>
+                <td><a href="/cantor/atualizar/<%= cantor.cpf %>" class="btn btn-warning">Atualizar</a></td>
+                <td><a href="/cantor/excluir/<%= cantor.cpf %>" class="btn btn-danger">excluir</a></td>
+            </tr>
+            <% }) %>
+            </table>
+
+    <a href="/cantor/cadastrar" class="btn btn-success">Cadastrar</a>
+    <a href="/" class="btn btn-secondary">Voltar</a>
+    <%-include("../partials/rodape.ejs")%>
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cantor</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs")%>
+    <div class="container">
+    
+    <form action="/cantor" method="post">
+
+        <div>
+            <label class="form-label">GENÊRO MUSICAL:</label>
+            <input value="<%=cantor.genero %>" class="form-control" type="text" name="genero" required>
+        </div>
+
+        <div>
+            <label class="form-label">NOME DO CANTOR:</label>
+            <input value="<%=cantor.nome %>" class="form-control" type="text" name="nome" required>
+        </div>
+
+        <div>
+            <label class="form-label"> CPF PARA CADASTRO:</label>
+            <input value="<%=cantor.cpf %>" class="form-control" type="text" name="cpf" required>
+        </div><br>
+        <div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+
+            <a  href="/" class="btn btn-secondary">Voltar</a>
+        </div>
+
+        
+
+    <%-include("../partials/rodape.ejs")%>
+
+</body>
+</html>

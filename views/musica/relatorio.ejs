@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+</head>
+<body>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <div class="container">
+
+    <% if (status=="1") { %>
+
+        <div class="alert alert-success alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        Cadastrado com <b>sucesso.</b>
+        </div>
+           
+<%}%>
+ 
+    <h2>Relatório </h2>
+
+   
+
+    <table class="table table-stiped">
+        <thead>
+            <th>Autoria</th>
+            <th>Nome </th>
+            <th>Produtora</th>
+            <th>Detalhar</th>
+            <th>Atualizar</th>
+            <th>Excluir</th>
+        </thead>
+
+        <% musicas.forEach(musica => {%>
+
+            <tr>
+                <td><%= musica.autoria %></td>
+                <td><%= musica.nome %></td>
+                <td><%= musica.produtora %></td>
+                <td><a href="/musicas/<%=musica.nome%>" class="btn btn-info">Detalhar</a></td>
+                <td><a href="/musicas/atualizar/<%= musica.nome %>" class="btn btn-warning">Atualizar</a></td>
+                <td><a href="/musicas/excluir/<%= musica.nome %>" class="btn btn-danger">excluir</a></td>
+            </tr>
+            <% }) %>
+            </table>
+
+    <a href="/musica/cadastrar" class="btn btn-success">Cadastrar</a>
+    <a href="/" class="btn btn-secondary">Voltar</a>
+    <%-include("../partials/rodape.ejs")%>
+
+
+
+</body>
+</html>

@@ -2,27 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>index</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("partials/cabecalho.ejs")%>
 </head>
 <body>
-    <div class="container">
-        <a href="/alunos">RELATORIO DE ALUNOS</a>
-        <a href="/alunos/cadastrar">CADASTRAR ALUNOS</a>
-        <%-include("partials/cabecalho.ejs")%>
-        <%-include("partials/rodape.ejs")%>
-    </div>
-
-    <div class="container">
-        <a href="/usuario">RELATORIO DE USUARIOS</a>
-        <a href="/usuario/cadastrar">CADASTRAR USUARIOS</a>
-        <%-include("partials/cabecalho.ejs")%>
-        <%-include("partials/rodape.ejs")%>
-    </div>
-    
-
-
+  
+<%- include("partials/rodape.ejs")%>
 </body>
 </html>

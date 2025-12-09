@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Musica</title>
+</head>
+<body>
+    <%- include("../partials/cabecalho.ejs")%>
+    <div class="container">
+    
+    <form action="/musicas" method="post">
+
+        <div>
+            <label class="form-label">AUTORIA:</label>
+            <input value="<%=musica.autoria %>" class="form-control" type="text" name="autoria" required>
+        </div>
+
+        <div>
+            <label class="form-label">NOME DA MUSICA:</label>
+            <input value="<%=musica.nome %>" class="form-control" type="text" name="nome" required>
+        </div>
+
+        <div>
+            <label class="form-label"> PRODUTORA:</label>
+            <input value="<%=musica.produtora %>"class="form-control" type="text" name="produtora" required>
+        </div><br>
+        <div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+
+            <a  href="/" class="btn btn-secondary">Voltar</a>
+        </div>
+
+        
+
+    <%-include("../partials/rodape.ejs")%>
+
+</body>
+</html>
